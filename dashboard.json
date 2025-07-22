@@ -133,11 +133,12 @@
           "editorMode": "code",
           "expr": "{job=\"$job\"} |~ `info: (?:\\d{1,3}\\.){3}\\d{1,3} .+ (A|HTTPS) IN` \n| regexp `info: (?:\\d{1,3}\\.){3}\\d{1,3} (?P<domain>.+) (A|HTTPS) IN` \n| line_format `{{.domain}}`",
           "legendFormat": "",
+          "maxLines": 5000,
           "queryType": "range",
           "refId": "A"
         }
       ],
-      "title": " Тop 10 most popular domains",
+      "title": "Most popular domains in the last 5000 queries",
       "transformations": [
         {
           "id": "groupBy",
@@ -515,12 +516,12 @@
     ]
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Unbound-dns",
   "uid": "3e4ce082-41f1-43e2-9fe1-8834f6eb25f9",
-  "version": 16
+  "version": 18
 }
